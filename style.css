@@ -1,0 +1,320 @@
+/* style.css
+   Paleta: carvão escuro, vinho, dourado envelhecido, off-white
+   Organização por seções e comentários para facilitar futuras edições.
+*/
+
+/* ===== Variáveis e reset básico ===== */
+:root{
+  --bg-900: #0b0b0b;         /* carvão */
+  --bg-800: #151515;
+  --accent-red: #7a0f14;     /* vinho */
+  --accent-gold: #b4862f;    /* dourado envelhecido */
+  --text-100: #f6f1ea;       /* off-white levemente amarelado */
+  --muted: #bfb5a7;
+  --glass: rgba(255,255,255,0.02);
+  --transition-fast: 230ms;
+  --container-max: 1100px;
+  --radius: 8px;
+}
+
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg-900),var(--bg-800));
+  color:var(--text-100);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Container utilitário ===== */
+.container{
+  width:90%;
+  max-width:var(--container-max);
+  margin:0 auto;
+}
+
+/* ===== Botões ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.6rem 1rem;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:var(--text-100);
+  transition:all var(--transition-fast) ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--primary{
+  background: linear-gradient(180deg, rgba(122,15,20,0.95), rgba(90,10,12,0.95));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 0 rgba(0,0,0,0.15);
+  color:var(--text-100);
+}
+.btn--secondary{
+  background: transparent;
+  border: 1px solid rgba(180,134,47,0.12);
+  color:var(--muted);
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:2.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.hero__inner{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  padding:1rem 0;
+}
+
+/* Media (vídeo) */
+.hero__media{
+  flex:1 1 560px;
+  min-width:280px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  padding: .4rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.hero__video{
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  display:block;
+  max-height:420px;
+  background:#000;
+}
+
+/* Conteúdo (título/descrição) */
+.hero__content{
+  flex:0 1 380px;
+  min-width:260px;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.hero__title{
+  margin:0;
+  font-family: 'Playfair Display', serif;
+  font-size:2.2rem;
+  color:var(--text-100);
+  letter-spacing:2px;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.7);
+}
+.hero__subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.6;
+}
+
+/* ===== ACCORDION (seções) ===== */
+.accordion{
+  margin-top:2rem;
+  margin-bottom:2rem;
+}
+.accordion__item{
+  margin-bottom:0.75rem;
+  border-radius:8px;
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Header (botão) */
+.accordion__header{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  width:100%;
+  padding:1rem 1.2rem;
+  background:transparent;
+  color:var(--text-100);
+  border:0;
+  text-align:left;
+  cursor:pointer;
+  transition:background var(--transition-fast);
+  font-weight:600;
+  font-size:1rem;
+}
+.accordion__header:hover{
+  background: rgba(255,255,255,0.01);
+}
+
+/* Ícone de seta (rotaciona) */
+.accordion__icon{
+  display:inline-block;
+  width:1.1rem;
+  transform-origin:center;
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1);
+  color:var(--muted);
+}
+
+/* Painel do conteúdo com animação de altura */
+.accordion__panel{
+  max-height:0; /* fechado por padrão */
+  overflow:hidden;
+  transition: max-height 350ms cubic-bezier(.2,.9,.3,1);
+  border-top:1px solid rgba(255,255,255,0.02);
+}
+.section-content{
+  padding:1.25rem 1.2rem;
+  color:var(--muted);
+}
+
+/* Quando aberto, adicionamos classe via JS para rotacionar seta e expandir */
+.accordion__item.open .accordion__icon{
+  transform: rotate(90deg);
+  color:var(--accent-gold);
+}
+.accordion__item.open .accordion__header{
+  background: linear-gradient(90deg, rgba(122,15,20,0.03), rgba(180,134,47,0.02));
+}
+
+/* ===== MAPAS ===== */
+.map-placeholder img{
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  display:block;
+  border:1px solid rgba(255,255,255,0.03);
+  margin-top:0.75rem;
+}
+.map-actions{
+  margin-top:.8rem;
+}
+
+/* ===== REINOS (cards) ===== */
+.kingdoms-grid{
+  margin-top:1rem;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.kingdom-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border-radius:8px;
+  padding:0.8rem;
+  display:flex;
+  gap:0.8rem;
+  align-items:flex-start;
+  border:1px solid rgba(255,255,255,0.02);
+}
+.kingdom-card__crest img{
+  width:68px;
+  height:68px;
+  object-fit:cover;
+  border-radius:6px;
+  border:2px solid rgba(0,0,0,0.4);
+}
+.kingdom-card__name{
+  margin:0 0 .25rem 0;
+  color:var(--text-100);
+  font-family:'Playfair Display', serif;
+}
+.kingdom-card__desc{margin:0;color:var(--muted);font-size:.95rem;}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  list-style:none;
+  padding:0;
+  margin:1rem 0 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.timeline__item{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+.timeline__year{
+  color:var(--accent-gold);
+  min-width:64px;
+  font-weight:700;
+  font-family:'Playfair Display', serif;
+}
+.timeline__content h4{margin:.1rem 0; color:var(--text-100)}
+.timeline__content p{margin:0;color:var(--muted)}
+
+/* ===== BESTIÁRIO / GALERIA ===== */
+.bestiary-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.bestiary-card{
+  background:rgba(255,255,255,0.02);
+  padding:.8rem;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.gallery-grid{
+  margin-top:1rem;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap:.6rem;
+}
+.gallery-grid img{
+  width:100%;
+  height: auto;
+  display:block;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* ===== RODAPÉ ===== */
+.site-footer{
+  border-top:1px solid rgba(255,255,255,0.03);
+  padding:1rem 0;
+  margin-top:2rem;
+  color:var(--muted);
+}
+.footer-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.footer-left strong{color:var(--text-100); font-family:'Playfair Display',serif}
+.footer-left .muted{display:block;font-size:.9rem;color:var(--muted)}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Mobile first já aplicado; ajustes */
+@media(min-width:880px){
+  .hero__inner{padding:1rem 0; align-items:center}
+  .hero__title{font-size:2.6rem}
+  .hero__video{max-height:520px}
+}
+
+/* Pequenos refinamentos para telas muito pequenas */
+@media(max-width:480px){
+  .hero__inner{gap:1rem}
+  .hero__title{font-size:1.6rem}
+  .hero__video{max-height:240px}
+  .accordion__header{padding:.8rem}
+  .section-content{padding:.9rem}
+}
+
+/* ===== UTILIDADES ===== */
+.muted{color:var(--muted)}
+.footer-link{color:var(--muted); text-decoration:none}
+.footer-link:hover{text-decoration:underline; color:var(--text-100)}
