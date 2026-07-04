@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Of Dragons — Enciclopédia</title>
+
+  <!-- Tipografia: fonte serif elegante para título + sans para o corpo -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Hero -->
+  <header id="hero" class="hero">
+    <div class="hero__inner container">
+      <!-- Espaço reservado para trailer -->
+      <div class="hero__media" aria-hidden="false">
+        <!-- Vídeo placeholder; troque a src pelo trailer real quando disponível -->
+        <video id="heroVideo" class="hero__video" controls poster="https://via.placeholder.com/1280x720/111111/AA0000?text=Trailer+Placeholder">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <!-- Texto alternativo caso o vídeo não carregue -->
+          Seu navegador não suporta vídeo HTML5. Aqui haveria o trailer do servidor.
+        </video>
+      </div>
+
+      <!-- Texto do hero -->
+      <div class="hero__content">
+        <h1 class="hero__title">WORLD OF DRAGONS</h1>
+        <p class="hero__subtitle">Um reino sombrio, repleto de dragões, intrigas e aventuras. Junte-se à saga no mundo de World Of Dragons – servidor Minecraft Bedrock Edition.</p>
+
+        <!-- Botão que rola para a primeira seção do conteúdo -->
+        <button id="enterEncyclopediaBtn" class="btn btn--primary" aria-controls="accordion" aria-label="Entrar na Enciclopédia">
+          Entrar na Enciclopédia
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal com acordeões -->
+  <main id="main" class="main container">
+    <!-- O container dos acordeões (usado pelo botão do hero) -->
+    <section id="accordion" class="accordion" aria-label="Seções da enciclopédia">
+      <!-- Cada item do acordeão: botão (header) + painel (conteúdo) -->
+      <!-- 1) Guia do Iniciante -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-guide" id="btn-guide">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">📖 Guia do Iniciante</span>
+        </button>
+        <div id="panel-guide" class="accordion__panel" role="region" aria-labelledby="btn-guide">
+          <div class="section-content">
+            <h3>Guia do Iniciante</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+            <h4>Como entrar</h4>
+            <p>Placeholder — instruções de conexão e portas do servidor.</p>
+            <h4>Como jogar</h4>
+            <p>Placeholder — dicas básicas de sobrevivência, progresso e classes.</p>
+            <h4>Regras</h4>
+            <p>Placeholder — regras do servidor.</p>
+            <h4>Economia</h4>
+            <p>Placeholder — descrição do sistema econômico.</p>
+            <h4>Perguntas Frequentes</h4>
+            <p>Placeholder — FAQ.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2) Mapa -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-map" id="btn-map">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">🗺️ Mapa</span>
+        </button>
+        <div id="panel-map" class="accordion__panel" role="region" aria-labelledby="btn-map">
+          <div class="section-content">
+            <h3>Mapa do Mundo</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+            <!-- Imagem placeholder grande -->
+            <div class="map-placeholder">
+              <img src="https://via.placeholder.com/1200x600/111111/AA0000?text=Mapa+Placeholder" alt="Mapa placeholder ocupando quase toda a largura">
+            </div>
+            <div class="map-actions">
+              <button class="btn btn--secondary" disabled aria-disabled="true">Mapa Interativo (Em breve)</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3) Reinos -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-kingdoms" id="btn-kingdoms">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">👑 Reinos</span>
+        </button>
+        <div id="panel-kingdoms" class="accordion__panel" role="region" aria-labelledby="btn-kingdoms">
+          <div class="section-content">
+            <h3>Reinos</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <!-- Cards de reinos -->
+            <div class="kingdoms-grid">
+              <!-- Exemplo de cartão -->
+              <article class="kingdom-card">
+                <div class="kingdom-card__crest">
+                  <img src="https://via.placeholder.com/120/66523E/FFFFFF?text=Bras%C3%A3o" alt="Brasão placeholder">
+                </div>
+                <div class="kingdom-card__body">
+                  <h4 class="kingdom-card__name">Nome do Reino</h4>
+                  <p class="kingdom-card__desc">Descrição placeholder do reino. Em breve informações detalhadas.</p>
+                </div>
+              </article>
+
+              <!-- Repetir cartões vazios prontos para edição -->
+              <article class="kingdom-card">
+                <div class="kingdom-card__crest">
+                  <img src="https://via.placeholder.com/120/66523E/FFFFFF?text=Bras%C3%A3o" alt="Brasão placeholder">
+                </div>
+                <div class="kingdom-card__body">
+                  <h4 class="kingdom-card__name">Nome do Reino</h4>
+                  <p class="kingdom-card__desc">Descrição placeholder do reino. Em breve informações detalhadas.</p>
+                </div>
+              </article>
+
+              <article class="kingdom-card">
+                <div class="kingdom-card__crest">
+                  <img src="https://via.placeholder.com/120/66523E/FFFFFF?text=Bras%C3%A3o" alt="Brasão placeholder">
+                </div>
+                <div class="kingdom-card__body">
+                  <h4 class="kingdom-card__name">Nome do Reino</h4>
+                  <p class="kingdom-card__desc">Descrição placeholder do reino. Em breve informações detalhadas.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4) História -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-history" id="btn-history">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">📜 História</span>
+        </button>
+        <div id="panel-history" class="accordion__panel" role="region" aria-labelledby="btn-history">
+          <div class="section-content">
+            <h3>História</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <!-- Timeline simples -->
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__year">-1000</span>
+                <div class="timeline__content">
+                  <h4>Era das Cinzas</h4>
+                  <p>Placeholder — eventos que marcaram o início do mundo.</p>
+                </div>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">-200</span>
+                <div class="timeline__content">
+                  <h4>A Ascensão das Casas</h4>
+                  <p>Placeholder — intrigas e batalhas que moldaram os reinos.</p>
+                </div>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__year">+0</span>
+                <div class="timeline__content">
+                  <h4>O Presente</h4>
+                  <p>Placeholder — o estado atual do mundo.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5) Bestiário -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-bestiary" id="btn-bestiary">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">🐉 Bestiário</span>
+        </button>
+        <div id="panel-bestiary" class="accordion__panel" role="region" aria-labelledby="btn-bestiary">
+          <div class="section-content">
+            <h3>Bestiário</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <!-- Sub-seções do bestiário -->
+            <div class="bestiary-grid">
+              <div class="bestiary-card">
+                <h4>Dragões</h4>
+                <p>Placeholder — entrada de dragões.</p>
+              </div>
+              <div class="bestiary-card">
+                <h4>Criaturas</h4>
+                <p>Placeholder — criaturas místicas.</p>
+              </div>
+              <div class="bestiary-card">
+                <h4>Animais</h4>
+                <p>Placeholder — fauna comum do mundo.</p>
+              </div>
+              <div class="bestiary-card">
+                <h4>Monstros</h4>
+                <p>Placeholder — perigos e bestas hostis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6) Magia -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-magic" id="btn-magic">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">✨ Magia</span>
+        </button>
+        <div id="panel-magic" class="accordion__panel" role="region" aria-labelledby="btn-magic">
+          <div class="section-content">
+            <h3>Magia</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <h4>Tipos de Magia</h4>
+            <p>Placeholder — elementos, rituais e escolas mágicas.</p>
+
+            <h4>Artefatos</h4>
+            <p>Placeholder — itens mágicos poderosos.</p>
+
+            <h4>Relíquias</h4>
+            <p>Placeholder — objetos lendários.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7) Facções -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-factions" id="btn-factions">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">⚔️ Facções</span>
+        </button>
+        <div id="panel-factions" class="accordion__panel" role="region" aria-labelledby="btn-factions">
+          <div class="section-content">
+            <h3>Facções</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <h4>Ordens</h4>
+            <p>Placeholder — ordens de cavaleiros e templários.</p>
+
+            <h4>Guildas</h4>
+            <p>Placeholder — guildas de comércio e aventureiros.</p>
+
+            <h4>Religiões</h4>
+            <p>Placeholder — cultos e crenças do mundo.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8) Galeria -->
+      <article class="accordion__item">
+        <button class="accordion__header" aria-expanded="false" aria-controls="panel-gallery" id="btn-gallery">
+          <span class="accordion__icon" aria-hidden="true">▶</span>
+          <span class="accordion__title">🖼️ Galeria</span>
+        </button>
+        <div id="panel-gallery" class="accordion__panel" role="region" aria-labelledby="btn-gallery">
+          <div class="section-content">
+            <h3>Galeria</h3>
+            <p>Esta seção ainda está em desenvolvimento. Em breve novas informações serão adicionadas.</p>
+
+            <!-- Grid de imagens placeholder -->
+            <div class="gallery-grid">
+              <img src="https://via.placeholder.com/400x300/222222/BB0000?text=Imagem+1" alt="Galeria imagem 1">
+              <img src="https://via.placeholder.com/400x300/222222/BB0000?text=Imagem+2" alt="Galeria imagem 2">
+              <img src="https://via.placeholder.com/400x300/222222/BB0000?text=Imagem+3" alt="Galeria imagem 3">
+              <img src="https://via.placeholder.com/400x300/222222/BB0000?text=Imagem+4" alt="Galeria imagem 4">
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>World Of Dragons</strong>
+        <span class="muted">Minecraft Bedrock Edition</span>
+      </div>
+      <div class="footer-center">
+        <span id="footerYear" class="muted">2026</span>
+      </div>
+      <div class="footer-right">
+        <a href="#" class="footer-link" aria-label="Discord (placeholder)">Discord (placeholder)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
